@@ -1,272 +1,332 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="id">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Fauziah Azhel — Web Developer</title>
-<meta name="description" content="Fauziah Azhel — Professional Web Developer from Indonesia. Modern, fast, accessible websites with HTML, CSS, JavaScript, React & Node.js.">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>Fauziah Azhel — Web Developer Indonesia</title>
+<meta name="description" content="Fauziah Azhel — Web Developer profesional dari Indonesia. Spesialis landing page, company profile, toko online & dashboard yang cepat, cantik, SEO-friendly.">
+<meta name="theme-color" content="#070b16">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='24' fill='%236366f1'/><text x='50' y='68' font-size='48' text-anchor='middle' fill='white' font-family='sans-serif' font-weight='bold'>FA</text></svg>">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Sora:wght@400;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Sora:wght@500;600;700;800&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
 <style>
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box}
 :root{
-  --bg:#070b16; --bg2:#0b1122; --card:rgba(255,255,255,.045);
-  --border:rgba(255,255,255,.1); --text:#eef2ff; --muted:#9aa6c2;
-  --brand:#6366f1; --brand2:#22d3ee; --accent:#f472b6;
-  --radius:20px; --max:1160px;
+  --bg:#060913; --bg2:#0b1226;
+  --card:rgba(255,255,255,.05); --card2:rgba(255,255,255,.08);
+  --border:rgba(255,255,255,.11); --border2:rgba(99,102,241,.4);
+  --text:#f1f5ff; --muted:#9aa7c7; --muted2:#6b7a9e;
+  --brand:#6366f1; --cyan:#22d3ee; --pink:#f472b6; --green:#22c55e;
+  --r:22px; --max:1160px;
+  --shadow:0 20px 60px rgba(0,0,0,.5);
+  --glow:0 10px 34px rgba(99,102,241,.45);
 }
-*{margin:0;padding:0;box-sizing:border-box}
-html{scroll-behavior:smooth}
-body{background:var(--bg);color:var(--text);font-family:Inter,system-ui,sans-serif;line-height:1.65;overflow-x:hidden}
-h1,h2,h3{font-family:Sora,sans-serif;line-height:1.15;letter-spacing:-.02em}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{background:var(--bg);color:var(--text);font-family:Inter,system-ui,-apple-system,sans-serif;line-height:1.7;overflow-x:hidden;min-height:100vh}
+img{max-width:100%;display:block}
 a{color:inherit;text-decoration:none}
-.wrap{max-width:var(--max);margin:0 auto;padding:0 24px}
-.bg-glow{position:fixed;inset:0;z-index:-1;background:
-  radial-gradient(600px 400px at 15% 10%,rgba(99,102,241,.28),transparent 60%),
-  radial-gradient(700px 450px at 85% 15%,rgba(34,211,238,.18),transparent 60%),
-  radial-gradient(600px 500px at 50% 100%,rgba(244,114,182,.12),transparent 60%),var(--bg)}
-.grid-bg{position:fixed;inset:0;z-index:-1;opacity:.35;background-image:linear-gradient(rgba(255,255,255,.05) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.05) 1px,transparent 1px);background-size:44px 44px;mask-image:radial-gradient(ellipse 80% 60% at 50% 0%,black 40%,transparent 100%)}
-/* NAV */
-nav{position:fixed;top:0;left:0;right:0;z-index:50;backdrop-filter:blur(16px);background:rgba(7,11,22,.72);border-bottom:1px solid var(--border)}
-.nav-inner{max-width:var(--max);margin:0 auto;padding:14px 24px;display:flex;align-items:center;justify-content:space-between}
-.logo{display:flex;align-items:center;gap:10px;font-family:Sora;font-weight:800}
-.logo-mark{width:36px;height:36px;border-radius:11px;display:grid;place-items:center;font-weight:800;background:linear-gradient(135deg,var(--brand),var(--brand2));box-shadow:0 8px 24px rgba(99,102,241,.4)}
-.nav-links{display:flex;gap:28px;color:var(--muted);font-size:.95rem;font-weight:500}
-.nav-links a:hover{color:#fff}
-.btn{display:inline-flex;align-items:center;gap:8px;padding:12px 22px;border-radius:999px;font-weight:600;font-size:.95rem;border:1px solid var(--border);transition:.25s;cursor:pointer}
-.btn-primary{background:linear-gradient(135deg,var(--brand),#8b5cf6 55%,var(--brand2));border:none;box-shadow:0 10px 30px rgba(99,102,241,.45)}
-.btn-primary:hover{transform:translateY(-2px);box-shadow:0 16px 40px rgba(99,102,241,.55)}
-.btn-ghost{background:rgba(255,255,255,.06)}
-.btn-ghost:hover{background:rgba(255,255,255,.11)}
-.btn-sm{padding:9px 18px;font-size:.88rem}
-.burger{display:none;background:none;border:1px solid var(--border);border-radius:10px;color:#fff;font-size:1.2rem;padding:6px 12px;cursor:pointer}
-/* HERO */
-.hero{padding:150px 0 70px;position:relative}
-.hero-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:48px;align-items:center}
-.badge{display:inline-flex;align-items:center;gap:8px;padding:8px 16px;border-radius:999px;background:rgba(34,197,94,.12);border:1px solid rgba(34,197,94,.3);color:#86efac;font-size:.85rem;font-weight:600;margin-bottom:20px}
-.dot{width:8px;height:8px;border-radius:50%;background:#22c55e;box-shadow:0 0 0 4px rgba(34,197,94,.2);animation:pulse 2s infinite}
-@keyframes pulse{50%{box-shadow:0 0 0 7px rgba(34,197,94,.08)}}
-.hero h1{font-size:clamp(2.4rem,5.2vw,4rem);font-weight:800}
-.grad{background:linear-gradient(90deg,#a5b4fc,var(--brand2),var(--accent));-webkit-background-clip:text;background-clip:text;color:transparent}
-.typed{color:var(--brand2);border-right:3px solid var(--brand2);padding-right:4px;animation:blink 1s steps(1) infinite}
+h1,h2,h3{font-family:Sora,sans-serif;line-height:1.12;letter-spacing:-.025em;text-wrap:balance}
+::selection{background:rgba(99,102,241,.5)}
+::-webkit-scrollbar{width:10px}::-webkit-scrollbar-track{background:var(--bg)}::-webkit-scrollbar-thumb{background:linear-gradient(var(--brand),var(--cyan));border-radius:99px}
+:focus-visible{outline:2px solid var(--cyan);outline-offset:3px;border-radius:8px}
+.wrap{max-width:var(--max);margin:0 auto;padding-left:22px;padding-right:22px;width:100%}
+/* background */
+.aurora{position:fixed;inset:0;z-index:-2;overflow:hidden;background:var(--bg)}
+.blob{position:absolute;border-radius:50%;filter:blur(90px);opacity:.5;animation:drift 14s ease-in-out infinite alternate}
+.b1{width:520px;height:520px;left:-140px;top:-140px;background:radial-gradient(circle,#6366f1,transparent 70%)}
+.b2{width:460px;height:460px;right:-120px;top:8%;background:radial-gradient(circle,#0ea5e9,transparent 70%);animation-delay:-4s;opacity:.4}
+.b3{width:600px;height:420px;left:30%;bottom:-180px;background:radial-gradient(circle,#ec4899,transparent 70%);opacity:.22;animation-delay:-8s}
+@keyframes drift{to{transform:translate(40px,30px) scale(1.08)}}
+.grid-overlay{position:fixed;inset:0;z-index:-1;background-image:linear-gradient(rgba(255,255,255,.045) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.045) 1px,transparent 1px);background-size:42px 42px;mask-image:radial-gradient(ellipse 90% 62% at 50% 0%,black 30%,transparent 75%);pointer-events:none}
+/* nav */
+nav{position:fixed;top:0;left:0;right:0;z-index:100;backdrop-filter:blur(18px);-webkit-backdrop-filter:blur(18px);background:rgba(6,9,19,.78);border-bottom:1px solid var(--border)}
+.nav-inner{max-width:var(--max);margin:0 auto;padding:12px 22px;display:flex;align-items:center;justify-content:space-between;gap:12px}
+.brand{display:flex;align-items:center;gap:11px;font-family:Sora;font-weight:800;font-size:1.02rem}
+.brand-mark{width:38px;height:38px;border-radius:12px;display:grid;place-items:center;font-weight:800;background:linear-gradient(135deg,#6366f1,#22d3ee);box-shadow:var(--glow);flex-shrink:0}
+.brand small{display:block;font-family:Inter;font-weight:500;font-size:.72rem;color:var(--muted);line-height:1.2}
+.links{display:flex;gap:26px;color:var(--muted);font-size:.93rem;font-weight:500}
+.links a{position:relative;padding:6px 0;transition:.2s}
+.links a:hover,.links a.active{color:#fff}
+.links a.active::after{content:"";position:absolute;left:0;right:0;bottom:0;height:2px;border-radius:99px;background:linear-gradient(90deg,var(--brand),var(--cyan))}
+.nav-cta{display:flex;gap:10px;align-items:center}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;padding:13px 24px;border-radius:999px;font-weight:600;font-size:.94rem;border:1px solid var(--border);transition:.25s;cursor:pointer;white-space:nowrap}
+.btn-primary{background:linear-gradient(135deg,#6366f1 0%,#8b5cf6 50%,#06b6d4 100%);border:none;color:#fff;box-shadow:var(--glow);position:relative;overflow:hidden}
+.btn-primary::after{content:"";position:absolute;top:0;left:-60%;width:50%;height:100%;background:linear-gradient(100deg,transparent,rgba(255,255,255,.35),transparent);transform:skewX(-20deg);transition:.5s}
+.btn-primary:hover{transform:translateY(-2px)}.btn-primary:hover::after{left:120%}
+.btn-ghost{background:rgba(255,255,255,.07)}.btn-ghost:hover{background:rgba(255,255,255,.13);transform:translateY(-1px)}
+.btn-sm{padding:10px 18px;font-size:.87rem}
+.burger{display:none;background:rgba(255,255,255,.07);border:1px solid var(--border);border-radius:12px;color:#fff;font-size:1.25rem;padding:7px 13px;cursor:pointer;line-height:1}
+/* hero */
+.hero{padding:132px 0 54px}
+.hero-grid{display:grid;grid-template-columns:1.08fr .92fr;gap:44px;align-items:center}
+.pill{display:inline-flex;align-items:center;gap:9px;padding:8px 15px;border-radius:999px;background:rgba(34,197,94,.11);border:1px solid rgba(34,197,94,.32);color:#86efac;font-size:.82rem;font-weight:600;margin-bottom:18px;max-width:100%}
+.dot{width:8px;height:8px;border-radius:50%;background:#22c55e;box-shadow:0 0 0 5px rgba(34,197,94,.18);animation:pulse 2s infinite;flex-shrink:0}
+@keyframes pulse{50%{box-shadow:0 0 0 8px rgba(34,197,94,.07)}}
+.hero h1{font-size:clamp(2.15rem,4.6vw + 1rem,3.9rem);font-weight:800}
+.grad{background:linear-gradient(92deg,#c7d2fe 0%,#22d3ee 45%,#f472b6 100%);-webkit-background-clip:text;background-clip:text;color:transparent}
+.typed-wrap{display:block;min-height:1.4em}
+.typed{color:var(--cyan);font-weight:700;border-right:3px solid var(--cyan);padding-right:6px;animation:blink 1s steps(1) infinite}
 @keyframes blink{50%{border-color:transparent}}
-.hero p.sub{color:var(--muted);font-size:1.08rem;margin:20px 0 28px;max-width:560px}
-.hero-cta{display:flex;gap:14px;flex-wrap:wrap;margin-bottom:34px}
-.stats{display:flex;gap:36px;flex-wrap:wrap}
-.stat b{font-family:Sora;font-size:1.6rem;display:block}
-.stat span{color:var(--muted);font-size:.88rem}
-/* profile card */
-.profile-wrap{position:relative;display:flex;justify-content:center}
-.avatar-card{width:320px;background:linear-gradient(180deg,rgba(255,255,255,.09),rgba(255,255,255,.03));border:1px solid var(--border);border-radius:28px;padding:28px;text-align:center;backdrop-filter:blur(12px);box-shadow:0 30px 80px rgba(0,0,0,.5);position:relative;z-index:2}
-.avatar{width:120px;height:120px;border-radius:50%;margin:0 auto 16px;display:grid;place-items:center;font-family:Sora;font-size:2.6rem;font-weight:800;background:linear-gradient(135deg,#6366f1,#22d3ee,#f472b6);border:4px solid rgba(255,255,255,.2)}
-.avatar-card h3{font-size:1.25rem}
-.avatar-card p{color:var(--muted);font-size:.9rem;margin:6px 0 16px}
-.tags{display:flex;gap:8px;justify-content:center;flex-wrap:wrap}
-.tag{font-size:.75rem;padding:5px 12px;border-radius:999px;background:rgba(99,102,241,.15);border:1px solid rgba(99,102,241,.35);color:#c7d2fe}
-.float{position:absolute;padding:12px 16px;border-radius:14px;background:rgba(11,17,34,.9);border:1px solid var(--border);font-size:.82rem;font-weight:600;box-shadow:0 16px 40px rgba(0,0,0,.45);z-index:3;animation:float 5s ease-in-out infinite}
-.float small{display:block;color:var(--muted);font-weight:400}
-.f1{top:20px;left:-10px}.f2{bottom:30px;right:-8px;animation-delay:2.5s}
-@keyframes float{50%{transform:translateY(-12px)}}
+.sub{color:var(--muted);font-size:clamp(.98rem,1.5vw,1.08rem);margin:18px 0 26px;max-width:560px}
+.cta-row{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:30px}
+.mini{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:28px}
+.mono{font-family:"JetBrains Mono",monospace;font-size:.76rem;padding:6px 12px;border-radius:999px;background:rgba(255,255,255,.06);border:1px solid var(--border);color:#cbd5e1}
+.stats{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;max-width:520px}
+.stat{background:var(--card);border:1px solid var(--border);border-radius:16px;padding:14px 16px;text-align:left}
+.stat b{font-family:Sora;font-size:clamp(1.2rem,2.5vw,1.55rem);display:block;line-height:1.1}
+.stat span{color:var(--muted);font-size:.8rem}
+/* profile */
+.profile-zone{position:relative;display:flex;justify-content:center;width:100%}
+.profile-card{width:min(340px,100%);background:linear-gradient(180deg,rgba(255,255,255,.1),rgba(255,255,255,.03));border:1px solid var(--border);border-radius:28px;padding:28px 24px;text-align:center;backdrop-filter:blur(14px);box-shadow:var(--shadow);position:relative;z-index:2;transition:transform .3s}
+.avatar{width:118px;height:118px;border-radius:50%;margin:0 auto 14px;display:grid;place-items:center;font-family:Sora;font-size:2.5rem;font-weight:800;background:conic-gradient(from 200deg,#6366f1,#22d3ee,#f472b6,#6366f1);border:4px solid rgba(255,255,255,.22);box-shadow:0 12px 34px rgba(99,102,241,.5)}
+.role{color:var(--muted);font-size:.89rem;margin:6px 0 14px}
+.chips{display:flex;gap:7px;justify-content:center;flex-wrap:wrap}
+.chip{font-size:.73rem;padding:5px 11px;border-radius:999px;background:rgba(99,102,241,.16);border:1px solid rgba(99,102,241,.4);color:#c7d2fe}
+.profile-btns{margin-top:18px;display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.float-card{position:absolute;padding:11px 15px;border-radius:15px;background:rgba(11,18,38,.92);border:1px solid var(--border);font-size:.8rem;font-weight:700;box-shadow:var(--shadow);z-index:3;animation:floaty 5s ease-in-out infinite;line-height:1.35;max-width:170px}
+.float-card small{display:block;color:var(--muted);font-weight:400;font-size:.74rem}
+.fc1{top:26px;left:0}.fc2{bottom:28px;right:0;animation-delay:2.5s}
+@keyframes floaty{50%{transform:translateY(-11px)}}
 /* marquee */
-.marquee{overflow:hidden;border-top:1px solid var(--border);border-bottom:1px solid var(--border);background:rgba(255,255,255,.02);padding:16px 0;margin:30px 0 0}
-.marquee-track{display:flex;gap:48px;width:max-content;animation:scroll 22s linear infinite;color:var(--muted);font-family:Sora;font-weight:600;white-space:nowrap}
+.marquee{overflow:hidden;border-top:1px solid var(--border);border-bottom:1px solid var(--border);background:rgba(255,255,255,.025);padding:15px 0;margin-top:34px}
+.track{display:flex;gap:44px;width:max-content;animation:scroll 24s linear infinite;color:var(--muted);font-family:Sora;font-weight:600;white-space:nowrap;font-size:.92rem}
+.marquee:hover .track{animation-play-state:paused}
 @keyframes scroll{to{transform:translateX(-50%)}}
 /* sections */
-section{padding:84px 0}
-.eyebrow{display:inline-block;font-size:.8rem;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--brand2);margin-bottom:12px}
-.sec-title{font-size:clamp(1.7rem,3.4vw,2.5rem);margin-bottom:12px}
-.sec-sub{color:var(--muted);max-width:640px;margin-bottom:40px}
-.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
-.card{background:var(--card);border:1px solid var(--border);border-radius:var(--radius);padding:28px;transition:.3s;position:relative;overflow:hidden}
-.card:hover{transform:translateY(-6px);border-color:rgba(99,102,241,.5);box-shadow:0 24px 60px rgba(99,102,241,.18)}
-.card::before{content:"";position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--brand),var(--brand2),var(--accent));opacity:0;transition:.3s}
+section{padding:clamp(56px,8vw,88px) 0}
+.eyebrow{display:inline-flex;align-items:center;gap:8px;font-size:.76rem;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:var(--cyan);background:rgba(34,211,238,.1);border:1px solid rgba(34,211,238,.28);padding:7px 14px;border-radius:999px;margin-bottom:14px}
+.sec-title{font-size:clamp(1.65rem,3vw + .8rem,2.5rem);margin-bottom:10px;max-width:720px}
+.sec-sub{color:var(--muted);max-width:660px;margin-bottom:34px;font-size:clamp(.94rem,1.4vw,1.02rem)}
+.auto-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,290px),1fr));gap:18px}
+.card{background:linear-gradient(180deg,rgba(255,255,255,.07),rgba(255,255,255,.025));border:1px solid var(--border);border-radius:var(--r);padding:26px;transition:.3s;position:relative;overflow:hidden}
+.card:hover{transform:translateY(-6px);border-color:var(--border2);box-shadow:0 22px 55px rgba(99,102,241,.2)}
+.card::before{content:"";position:absolute;top:0;left:0;right:0;height:3px;background:linear-gradient(90deg,var(--brand),var(--cyan),var(--pink));opacity:0;transition:.3s}
 .card:hover::before{opacity:1}
-.icon{width:48px;height:48px;border-radius:14px;display:grid;place-items:center;font-size:1.4rem;margin-bottom:16px;background:linear-gradient(135deg,rgba(99,102,241,.3),rgba(34,211,238,.2));border:1px solid rgba(99,102,241,.4)}
-.card h3{margin-bottom:8px;font-size:1.1rem}
-.card p{color:var(--muted);font-size:.93rem}
-.bar{height:8px;border-radius:99px;background:rgba(255,255,255,.08);margin-top:16px;overflow:hidden}
-.bar i{display:block;height:100%;border-radius:99px;background:linear-gradient(90deg,var(--brand),var(--brand2))}
+.ico{width:50px;height:50px;border-radius:15px;display:grid;place-items:center;font-size:1.45rem;margin-bottom:15px;background:linear-gradient(135deg,rgba(99,102,241,.35),rgba(34,211,238,.18));border:1px solid rgba(99,102,241,.45)}
+.card h3{margin-bottom:7px;font-size:1.06rem}
+.card p{color:var(--muted);font-size:.92rem}
+.bar{height:8px;border-radius:99px;background:rgba(255,255,255,.09);margin-top:15px;overflow:hidden}
+.bar i{display:block;height:100%;width:0;border-radius:99px;background:linear-gradient(90deg,var(--brand),var(--cyan));transition:width 1.2s ease}
 /* projects */
-.proj-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
-.proj{background:var(--card);border:1px solid var(--border);border-radius:var(--radius);overflow:hidden;transition:.3s}
-.proj:hover{transform:translateY(-6px);box-shadow:0 24px 60px rgba(0,0,0,.5);border-color:rgba(34,211,238,.4)}
-.proj-img{height:170px;display:grid;place-items:center;font-size:3rem;position:relative;overflow:hidden}
-.p1{background:linear-gradient(135deg,#4f46e5,#06b6d4)}.p2{background:linear-gradient(135deg,#ec4899,#8b5cf6)}.p3{background:linear-gradient(135deg,#059669,#22d3ee)}.p4{background:linear-gradient(135deg,#f59e0b,#ef4444)}.p5{background:linear-gradient(135deg,#0ea5e9,#6366f1)}.p6{background:linear-gradient(135deg,#10b981,#84cc16)}
-.proj-body{padding:22px}
-.proj-body h3{margin-bottom:6px}
-.proj-body p{color:var(--muted);font-size:.9rem;margin-bottom:14px}
-.stack{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:16px}
-.stack span{font-size:.72rem;padding:4px 10px;border-radius:99px;background:rgba(255,255,255,.07);border:1px solid var(--border);color:#cbd5e1}
-.proj-links{display:flex;gap:12px;font-size:.88rem;font-weight:600}
-.proj-links a{color:var(--brand2)}.proj-links a:hover{text-decoration:underline}
-/* timeline */
-.timeline{max-width:720px;margin:0 auto;position:relative;padding-left:28px}
-.timeline::before{content:"";position:absolute;left:8px;top:0;bottom:0;width:2px;background:linear-gradient(var(--brand),var(--brand2))}
-.t-item{position:relative;background:var(--card);border:1px solid var(--border);border-radius:16px;padding:22px 24px;margin-bottom:18px}
-.t-item::before{content:"";position:absolute;left:-26px;top:26px;width:12px;height:12px;border-radius:50%;background:var(--brand2);box-shadow:0 0 0 4px rgba(34,211,238,.2)}
-.t-item b{font-family:Sora}
-.t-item span{font-size:.82rem;color:var(--brand2);font-weight:600}
+.proj{background:linear-gradient(180deg,rgba(255,255,255,.06),rgba(255,255,255,.02));border:1px solid var(--border);border-radius:var(--r);overflow:hidden;transition:.3s;display:flex;flex-direction:column}
+.proj:hover{transform:translateY(-7px);border-color:rgba(34,211,238,.45);box-shadow:0 26px 60px rgba(0,0,0,.55)}
+.proj-img{min-height:168px;display:flex;align-items:center;justify-content:space-between;padding:22px;position:relative;overflow:hidden}
+.proj-img::after{content:"";position:absolute;inset:0;background:radial-gradient(circle at 80% 20%,rgba(255,255,255,.22),transparent 55%)}
+.emoji{font-size:3.1rem;filter:drop-shadow(0 8px 18px rgba(0,0,0,.35));position:relative;z-index:1}
+.p-num{font-family:Sora;font-weight:800;font-size:2.6rem;color:rgba(255,255,255,.28);position:relative;z-index:1}
+.p1{background:linear-gradient(135deg,#4f46e5,#06b6d4)}.p2{background:linear-gradient(135deg,#db2777,#7c3aed)}.p3{background:linear-gradient(135deg,#059669,#0ea5e9)}.p4{background:linear-gradient(135deg,#f59e0b,#ef4444)}.p5{background:linear-gradient(135deg,#0284c7,#6366f1)}.p6{background:linear-gradient(135deg,#059669,#a3e635)}
+.proj-body{padding:22px;display:flex;flex-direction:column;gap:10px;flex:1}
+.proj-body h3{font-size:1.05rem}
+.proj-body p{color:var(--muted);font-size:.9rem;flex:1}
+.stack{display:flex;gap:7px;flex-wrap:wrap}
+.stack span{font-size:.71rem;padding:4px 10px;border-radius:99px;background:rgba(255,255,255,.07);border:1px solid var(--border);color:#cbd5e1}
+.plinks{display:flex;gap:16px;font-size:.88rem;font-weight:700;margin-top:4px}
+.plinks a{color:var(--cyan)}.plinks a:hover{text-decoration:underline}
+/* journey */
+.timeline{max-width:740px;margin:0 auto;position:relative;padding-left:30px}
+.timeline::before{content:"";position:absolute;left:9px;top:6px;bottom:6px;width:2px;background:linear-gradient(var(--brand),var(--cyan));border-radius:99px}
+.t-item{position:relative;background:var(--card);border:1px solid var(--border);border-radius:18px;padding:20px 22px;margin-bottom:16px}
+.t-item::before{content:"";position:absolute;left:-27px;top:26px;width:13px;height:13px;border-radius:50%;background:var(--cyan);box-shadow:0 0 0 5px rgba(34,211,238,.18)}
+.t-item .date{font-size:.78rem;color:var(--cyan);font-weight:700;letter-spacing:.06em}
+.t-item b{font-family:Sora;font-size:1.02rem}
 .t-item p{color:var(--muted);font-size:.92rem;margin-top:6px}
 /* contact */
-.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:24px}
-.contact-card{background:linear-gradient(135deg,rgba(99,102,241,.16),rgba(34,211,238,.1));border:1px solid rgba(99,102,241,.35);border-radius:24px;padding:36px}
-.contact-card h3{font-size:1.5rem;margin-bottom:10px}
-.contact-card p{color:var(--muted);margin-bottom:22px}
-.c-row{display:flex;align-items:center;gap:12px;margin-bottom:14px;font-size:.95rem}
-.c-ico{width:40px;height:40px;border-radius:12px;display:grid;place-items:center;background:rgba(255,255,255,.08);border:1px solid var(--border)}
-form{background:var(--card);border:1px solid var(--border);border-radius:24px;padding:32px;display:flex;flex-direction:column;gap:14px}
-input,textarea{background:rgba(255,255,255,.05);border:1px solid var(--border);border-radius:12px;padding:13px 16px;color:#fff;font-family:inherit;font-size:.95rem;width:100%}
-input:focus,textarea:focus{outline:none;border-color:var(--brand)}
-textarea{min-height:120px;resize:vertical}
-footer{border-top:1px solid var(--border);padding:28px 0;color:var(--muted);font-size:.88rem;text-align:center}
-/* reveal */
-.reveal{opacity:0;transform:translateY(28px);transition:.7s}
+.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:20px;align-items:stretch}
+.contact-card{background:linear-gradient(135deg,rgba(99,102,241,.2),rgba(34,211,238,.1));border:1px solid rgba(99,102,241,.4);border-radius:26px;padding:clamp(24px,4vw,36px);position:relative;overflow:hidden}
+.contact-card::before{content:"💬";position:absolute;right:18px;top:12px;font-size:4rem;opacity:.12}
+.c-row{display:flex;align-items:center;gap:12px;margin:14px 0;font-size:.94rem;word-break:break-word}
+.c-ico{width:42px;height:42px;border-radius:13px;display:grid;place-items:center;background:rgba(255,255,255,.09);border:1px solid var(--border);flex-shrink:0}
+form{background:var(--card);border:1px solid var(--border);border-radius:26px;padding:clamp(22px,4vw,30px);display:flex;flex-direction:column;gap:13px}
+label{font-size:.82rem;color:var(--muted);font-weight:600}
+input,textarea{background:rgba(255,255,255,.055);border:1px solid var(--border);border-radius:13px;padding:13px 15px;color:#fff;font-family:inherit;font-size:.95rem;width:100%;transition:.2s}
+input:focus,textarea:focus{outline:none;border-color:var(--brand);background:rgba(99,102,241,.1);box-shadow:0 0 0 3px rgba(99,102,241,.2)}
+textarea{min-height:118px;resize:vertical}
+footer{border-top:1px solid var(--border);padding:26px 0 40px;color:var(--muted);font-size:.86rem;text-align:center}
+#toTop{position:fixed;bottom:20px;right:20px;width:48px;height:48px;border-radius:50%;border:1px solid var(--border);background:linear-gradient(135deg,var(--brand),#06b6d4);color:#fff;font-size:1.25rem;cursor:pointer;display:none;z-index:90;box-shadow:var(--glow)}
+.reveal{opacity:0;transform:translateY(26px);transition:opacity .7s,transform .7s}
 .reveal.show{opacity:1;transform:none}
-#toTop{position:fixed;bottom:24px;right:24px;width:46px;height:46px;border-radius:50%;border:1px solid var(--border);background:rgba(99,102,241,.9);color:#fff;font-size:1.2rem;cursor:pointer;display:none;z-index:60}
-@media(max-width:900px){
-  .hero-grid,.contact-grid{grid-template-columns:1fr}
-  .cards,.proj-grid{grid-template-columns:1fr 1fr}
-  .nav-links{display:none}.nav-links.open{display:flex;position:absolute;top:64px;left:0;right:0;flex-direction:column;background:#0b1122;padding:20px 24px;border-bottom:1px solid var(--border)}
-  .burger{display:block}.f1{left:0}.f2{right:0}
+/* RESPONSIVE */
+@media(max-width:1020px){
+  .hero-grid{grid-template-columns:1fr;gap:36px}
+  .sub{max-width:100%}
+  .profile-zone{order:2}
+  .contact-grid{grid-template-columns:1fr}
+  .links{ gap:20px; font-size:.88rem }
 }
-@media(max-width:600px){.cards,.proj-grid{grid-template-columns:1fr}.hero{padding-top:120px}}
+@media(max-width:760px){
+  .links{display:none;position:absolute;top:63px;left:0;right:0;flex-direction:column;background:rgba(6,9,19,.98);padding:18px 22px 22px;border-bottom:1px solid var(--border);gap:6px}
+  .links.open{display:flex}
+  .links a{padding:12px 4px;border-bottom:1px solid rgba(255,255,255,.06);font-size:1rem}
+  .burger{display:block}
+  .nav-cta .btn-ghost{display:none}
+  .hero{padding:112px 0 40px}
+  .cta-row .btn{flex:1 1 100%;}
+  .stats{grid-template-columns:repeat(3,1fr);gap:8px}
+  .stat{padding:12px 10px;text-align:center}
+  .float-card{position:static;animation:none;max-width:100%;margin:10px auto 0}
+  .profile-zone{flex-direction:column;align-items:center}
+  .fc1,.fc2{order:3}
+  section{padding:52px 0}
+  .proj-img{min-height:148px}
+}
+@media(max-width:420px){
+  .wrap{padding-left:16px;padding-right:16px}
+  .hero h1{font-size:2rem}
+  .profile-btns{grid-template-columns:1fr}
+  .stats{grid-template-columns:1fr 1fr 1fr;gap:6px}
+  .stat b{font-size:1.1rem}.stat span{font-size:.72rem}
+}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.reveal{opacity:1;transform:none}}
 </style>
 </head>
 <body>
-<div class="bg-glow"></div><div class="grid-bg"></div>
+<div class="aurora"><div class="blob b1"></div><div class="blob b2"></div><div class="blob b3"></div></div>
+<div class="grid-overlay"></div>
 
 <nav><div class="nav-inner">
-  <a class="logo" href="#top"><span class="logo-mark">FA</span> fauziahazhel</a>
-  <div class="nav-links" id="navLinks">
+  <a class="brand" href="#top" aria-label="Home"><span class="brand-mark">FA</span><span>Fauziah Azhel<small>Web Developer • ID</small></span></a>
+  <div class="links" id="navLinks">
     <a href="#about">About</a><a href="#skills">Skills</a><a href="#projects">Projects</a><a href="#journey">Journey</a><a href="#contact">Contact</a>
   </div>
-  <div style="display:flex;gap:10px;align-items:center">
+  <div class="nav-cta">
+    <a class="btn btn-ghost btn-sm" href="https://github.com/fauziahazhel">GitHub</a>
     <a class="btn btn-primary btn-sm" href="#contact">Hire Me</a>
-    <button class="burger" onclick="document.getElementById('navLinks').classList.toggle('open')">☰</button>
+    <button class="burger" id="burger" aria-label="Menu">☰</button>
   </div>
 </div></nav>
 
 <header class="hero wrap" id="top"><div class="hero-grid">
   <div>
-    <span class="badge"><span class="dot"></span> Available for freelance & full-time</span>
-    <h1>Hi, I'm <span class="grad">Fauziah Azhel</span><br>Building <span class="typed" id="typed">modern websites</span></h1>
-    <p class="sub">Professional Web Developer from Indonesia. I craft fast, accessible, SEO-friendly websites and web apps — from landing pages to full-stack dashboards with clean code and delightful UI.</p>
-    <div class="hero-cta">
-      <a class="btn btn-primary" href="#projects">View My Work →</a>
+    <span class="pill"><span class="dot"></span> Available for freelance & full-time • Indonesia</span>
+    <h1>Halo, saya <span class="grad">Fauziah Azhel</span><span class="typed-wrap">Saya bikin <span class="typed" id="typed">website modern</span></span></h1>
+    <p class="sub">Web Developer profesional. Spesialis landing page, company profile, toko online & dashboard — cepat (Lighthouse 95+), cantik di semua HP, dan SEO-friendly dari awal.</p>
+    <div class="mini"><span class="mono">⚡ Fast</span><span class="mono">📱 100% Responsive</span><span class="mono">🔍 SEO Ready</span><span class="mono">🎨 Modern UI</span></div>
+    <div class="cta-row">
+      <a class="btn btn-primary" href="#projects">Lihat Portfolio →</a>
       <a class="btn btn-ghost" href="mailto:fauziahazhel@gmail.com">✉ fauziahazhel@gmail.com</a>
     </div>
     <div class="stats">
-      <div class="stat"><b><span class="count" data-n="25">0</span>+</b><span>Projects shipped</span></div>
-      <div class="stat"><b><span class="count" data-n="3">0</span>+ yrs</b><span>Web experience</span></div>
-      <div class="stat"><b><span class="count" data-n="100">0</span>%</b><span>Responsive & SEO</span></div>
+      <div class="stat"><b><span class="count" data-n="25">0</span>+</b><span>Project selesai</span></div>
+      <div class="stat"><b><span class="count" data-n="15">0</span>+</b><span>Klien puas</span></div>
+      <div class="stat"><b><span class="count" data-n="100">0</span>%</b><span>Mobile friendly</span></div>
     </div>
   </div>
-  <div class="profile-wrap">
-    <div class="float f1">⚡ Fast<small>Lighthouse 95+</small></div>
-    <div class="avatar-card">
+  <div class="profile-zone">
+    <div class="float-card fc1">⚡ Speed 95+<small>Lighthouse score</small></div>
+    <div class="profile-card" id="tilt">
       <div class="avatar">FA</div>
-      <h3>Fauziah Azhel</h3>
-      <p>🌐 Web Developer • Indonesia</p>
-      <div class="tags"><span class="tag">HTML</span><span class="tag">CSS</span><span class="tag">JS</span><span class="tag">React</span><span class="tag">Node.js</span></div>
-      <div style="margin-top:18px;display:flex;gap:10px;justify-content:center">
-        <a class="btn btn-ghost btn-sm" href="https://github.com/fauziahazhel">GitHub</a>
-        <a class="btn btn-ghost btn-sm" href="mailto:fauziahazhel@gmail.com">Email</a>
+      <h3 style="font-size:1.25rem">Fauziah Azhel</h3>
+      <p class="role">🌐 Web Developer • Indonesia<br>HTML • CSS • JS • React</p>
+      <div class="chips"><span class="chip">HTML5</span><span class="chip">CSS3</span><span class="chip">JavaScript</span><span class="chip">React</span><span class="chip">Node.js</span></div>
+      <div class="profile-btns">
+        <a class="btn btn-primary btn-sm" href="#contact">Hire Me</a>
+        <a class="btn btn-ghost btn-sm" href="https://github.com/fauziahazhel">GitHub →</a>
       </div>
     </div>
-    <div class="float f2">🎨 Clean UI<small>Modern • Minimal</small></div>
+    <div class="float-card fc2">🎨 Clean & Modern<small>UI anti jadul</small></div>
   </div>
 </div></header>
 
-<div class="marquee"><div class="marquee-track">
-  <span>HTML5 •</span><span>CSS3 •</span><span>JavaScript •</span><span>TypeScript •</span><span>React •</span><span>Next.js •</span><span>Node.js •</span><span>Tailwind •</span><span>Git •</span><span>REST API •</span><span>Responsive •</span><span>SEO •</span>
-  <span>HTML5 •</span><span>CSS3 •</span><span>JavaScript •</span><span>TypeScript •</span><span>React •</span><span>Next.js •</span><span>Node.js •</span><span>Tailwind •</span><span>Git •</span><span>REST API •</span><span>Responsive •</span><span>SEO •</span>
+<div class="marquee"><div class="track">
+  <span>HTML5 ✦</span><span>CSS3 ✦</span><span>JavaScript ✦</span><span>TypeScript ✦</span><span>React ✦</span><span>Next.js ✦</span><span>Tailwind ✦</span><span>Node.js ✦</span><span>Git ✦</span><span>SEO ✦</span><span>Responsive ✦</span><span>VPS Deploy ✦</span>
+  <span>HTML5 ✦</span><span>CSS3 ✦</span><span>JavaScript ✦</span><span>TypeScript ✦</span><span>React ✦</span><span>Next.js ✦</span><span>Tailwind ✦</span><span>Node.js ✦</span><span>Git ✦</span><span>SEO ✦</span><span>Responsive ✦</span><span>VPS Deploy ✦</span>
 </div></div>
 
 <section id="about"><div class="wrap">
-  <span class="eyebrow">About me</span>
-  <h2 class="sec-title">Developer who cares about <span class="grad">design & performance</span></h2>
-  <p class="sec-sub">Saya fokus di web modern: cepat, rapi, dan mudah dipakai. Dari company profile, toko online, sampai dashboard admin.</p>
-  <div class="cards reveal">
-    <div class="card"><div class="icon">💻</div><h3>Frontend Expert</h3><p>Pixel-perfect slicing dari Figma, animasi halus, mobile-first responsive di semua device.</p><div class="bar"><i style="width:95%"></i></div></div>
-    <div class="card"><div class="icon">⚙️</div><h3>Backend & API</h3><p>REST API dengan Node.js, auth, database, dan integrasi pihak ketiga yang aman.</p><div class="bar"><i style="width:85%"></i></div></div>
-    <div class="card"><div class="icon">🚀</div><h3>SEO & Speed</h3><p>Optimasi Core Web Vitals, meta SEO, dan deploy ke GitHub Pages / Vercel / VPS.</p><div class="bar"><i style="width:90%"></i></div></div>
+  <span class="eyebrow">✦ About me</span>
+  <h2 class="sec-title">Developer yang peduli <span class="grad">tampilan & kecepatan</span></h2>
+  <p class="sec-sub">HP, tablet, laptop, desktop — semua mulus. Tidak ada layout rusak, tidak ada teks kepotong.</p>
+  <div class="auto-grid reveal">
+    <div class="card"><div class="ico">💻</div><h3>Frontend Rapi</h3><p>Figma → kode pixel-perfect. Animasi halus, dark/light mode, mobile-first.</p><div class="bar"><i data-w="95%"></i></div></div>
+    <div class="card"><div class="ico">⚙️</div><h3>Backend Aman</h3><p>REST API Node.js, login/auth, database MySQL/Mongo, integrasi payment & WA.</p><div class="bar"><i data-w="85%"></i></div></div>
+    <div class="card"><div class="ico">🚀</div><h3>SEO + Speed</h3><p>Core Web Vitals hijau, meta SEO lengkap, deploy Pages/Vercel/VPS + domain.</p><div class="bar"><i data-w="92%"></i></div></div>
   </div>
 </div></section>
 
 <section id="skills"><div class="wrap">
-  <span class="eyebrow">Skills</span>
+  <span class="eyebrow">✦ Skills</span>
   <h2 class="sec-title">Tech stack profesional</h2>
-  <p class="sec-sub">Tools yang saya pakai tiap hari untuk produksi.</p>
-  <div class="cards reveal">
-    <div class="card"><div class="icon">🌐</div><h3>Languages</h3><p>HTML5, CSS3, JavaScript ES6+, TypeScript dasar</p><div class="bar"><i style="width:94%"></i></div></div>
-    <div class="card"><div class="icon">⚛️</div><h3>Frameworks</h3><p>React, Next.js, Tailwind CSS, Bootstrap</p><div class="bar"><i style="width:88%"></i></div></div>
-    <div class="card"><div class="icon">🟢</div><h3>Backend</h3><p>Node.js, Express, MySQL, MongoDB, Firebase</p><div class="bar"><i style="width:82%"></i></div></div>
-    <div class="card"><div class="icon">🎨</div><h3>Design</h3><p>Figma to code, UI clean modern, dark/light mode</p><div class="bar"><i style="width:90%"></i></div></div>
-    <div class="card"><div class="icon">🛠️</div><h3>Tools</h3><p>Git & GitHub, VS Code, Vite, npm, Postman</p><div class="bar"><i style="width:92%"></i></div></div>
-    <div class="card"><div class="icon">☁️</div><h3>Deploy</h3><p>GitHub Pages, Vercel, Netlify, VPS + Nginx</p><div class="bar"><i style="width:86%"></i></div></div>
+  <p class="sec-sub">Yang dipakai harian buat project klien.</p>
+  <div class="auto-grid reveal">
+    <div class="card"><div class="ico">🌐</div><h3>Bahasa</h3><p>HTML5 semantik, CSS3 modern (flex/grid), JavaScript ES6+, TypeScript dasar.</p><div class="bar"><i data-w="94%"></i></div></div>
+    <div class="card"><div class="ico">⚛️</div><h3>Framework</h3><p>React, Next.js, Tailwind CSS, Bootstrap untuk dashboard cepat.</p><div class="bar"><i data-w="88%"></i></div></div>
+    <div class="card"><div class="ico">🟢</div><h3>Backend</h3><p>Node.js + Express, MySQL, MongoDB, Firebase untuk realtime.</p><div class="bar"><i data-w="82%"></i></div></div>
+    <div class="card"><div class="ico">🎨</div><h3>UI / UX</h3><p>Desain clean modern, spacing konsisten, tipografi enak dibaca di HP.</p><div class="bar"><i data-w="90%"></i></div></div>
+    <div class="card"><div class="ico">🛠️</div><h3>Tools</h3><p>Git & GitHub, VS Code, Vite, npm, Postman, Figma.</p><div class="bar"><i data-w="92%"></i></div></div>
+    <div class="card"><div class="ico">☁️</div><h3>Deploy</h3><p>GitHub Pages, Vercel, Netlify, VPS Rocky Linux + Nginx + SSL.</p><div class="bar"><i data-w="86%"></i></div></div>
   </div>
 </div></section>
 
 <section id="projects"><div class="wrap">
-  <span class="eyebrow">Portfolio</span>
-  <h2 class="sec-title">Featured projects</h2>
-  <p class="sec-sub">Contoh karya ala agency modern. Ganti dengan link repo aslimu nanti.</p>
-  <div class="proj-grid reveal">
-    <div class="proj"><div class="proj-img p1">🛍️</div><div class="proj-body"><h3>Toko Online Modern</h3><p>E-commerce full cart, checkout, admin dashboard. Cepat & mobile friendly.</p><div class="stack"><span>React</span><span>Tailwind</span><span>Node.js</span></div><div class="proj-links"><a href="https://github.com/fauziahazhel">Live Demo →</a><a href="https://github.com/fauziahazhel">Code →</a></div></div></div>
-    <div class="proj"><div class="proj-img p2">🏢</div><div class="proj-body"><h3>Company Profile</h3><p>Landing elegan untuk perusahaan dengan animasi scroll dan form kontak.</p><div class="stack"><span>HTML</span><span>CSS</span><span>JS</span></div><div class="proj-links"><a href="https://github.com/fauziahazhel">Live Demo →</a><a href="https://github.com/fauziahazhel">Code →</a></div></div></div>
-    <div class="proj"><div class="proj-img p3">📊</div><div class="proj-body"><h3>Admin Dashboard</h3><p>Dashboard analytics dengan chart, dark mode, dan tabel interaktif.</p><div class="stack"><span>Next.js</span><span>Chart.js</span></div><div class="proj-links"><a href="https://github.com/fauziahazhel">Live Demo →</a><a href="https://github.com/fauziahazhel">Code →</a></div></div></div>
-    <div class="proj"><div class="proj-img p4">🍔</div><div class="proj-body"><h3>Food Order App</h3><p>Aplikasi pesan makanan dengan realtime order tracking.</p><div class="stack"><span>React</span><span>Firebase</span></div><div class="proj-links"><a href="https://github.com/fauziahazhel">Live Demo →</a><a href="https://github.com/fauziahazhel">Code →</a></div></div></div>
-    <div class="proj"><div class="proj-img p5">✈️</div><div class="proj-body"><h3>Travel Landing</h3><p>Landing page travel dengan hero video dan booking form.</p><div class="stack"><span>Tailwind</span><span>JS</span></div><div class="proj-links"><a href="https://github.com/fauziahazhel">Live Demo →</a><a href="https://github.com/fauziahazhel">Code →</a></div></div></div>
-    <div class="proj"><div class="proj-img p6">💼</div><div class="proj-body"><h3>Portfolio CMS</h3><p>Portfolio + blog dengan markdown CMS, SEO 100.</p><div class="stack"><span>Next.js</span><span>MDX</span></div><div class="proj-links"><a href="https://github.com/fauziahazhel">Live Demo →</a><a href="https://github.com/fauziahazhel">Code →</a></div></div></div>
+  <span class="eyebrow">✦ Portfolio</span>
+  <h2 class="sec-title">Project pilihan</h2>
+  <p class="sec-sub">Ganti link-nya dengan repo aslimu saat sudah ada — layout sudah responsive otomatis.</p>
+  <div class="auto-grid reveal">
+    <div class="proj"><div class="proj-img p1"><span class="emoji">🛍️</span><span class="p-num">01</span></div><div class="proj-body"><h3>Toko Online Modern</h3><p>Cart, checkout, ongkir, admin. Full responsive dari HP kecil sampai desktop.</p><div class="stack"><span>React</span><span>Tailwind</span><span>Node.js</span></div><div class="plinks"><a href="https://github.com/fauziahazhel">Live →</a><a href="https://github.com/fauziahazhel">Code →</a></div></div></div>
+    <div class="proj"><div class="proj-img p2"><span class="emoji">🏢</span><span class="p-num">02</span></div><div class="proj-body"><h3>Company Profile Elegan</h3><p>Landing perusahaan + animasi scroll halus + form WA otomatis.</p><div class="stack"><span>HTML</span><span>CSS</span><span>JS</span></div><div class="plinks"><a href="https://github.com/fauziahazhel">Live →</a><a href="https://github.com/fauziahazhel">Code →</a></div></div></div>
+    <div class="proj"><div class="proj-img p3"><span class="emoji">📊</span><span class="p-num">03</span></div><div class="proj-body"><h3>Dashboard Admin</h3><p>Chart analytics, tabel, dark mode. Enak dipakai di tablet & laptop.</p><div class="stack"><span>Next.js</span><span>Chart.js</span></div><div class="plinks"><a href="https://github.com/fauziahazhel">Live →</a><a href="https://github.com/fauziahazhel">Code →</a></div></div></div>
+    <div class="proj"><div class="proj-img p4"><span class="emoji">🍔</span><span class="p-num">04</span></div><div class="proj-body"><h3>Food Order App</h3><p>Pesan makanan realtime, tracking driver, notif otomatis.</p><div class="stack"><span>React</span><span>Firebase</span></div><div class="plinks"><a href="https://github.com/fauziahazhel">Live →</a><a href="https://github.com/fauziahazhel">Code →</a></div></div></div>
+    <div class="proj"><div class="proj-img p5"><span class="emoji">✈️</span><span class="p-num">05</span></div><div class="proj-body"><h3>Travel Landing</h3><p>Hero besar, galeri, form booking. Loading &lt; 1 detik.</p><div class="stack"><span>Tailwind</span><span>JS</span></div><div class="plinks"><a href="https://github.com/fauziahazhel">Live →</a><a href="https://github.com/fauziahazhel">Code →</a></div></div></div>
+    <div class="proj"><div class="proj-img p6"><span class="emoji">💼</span><span class="p-num">06</span></div><div class="proj-body"><h3>Blog + Portfolio CMS</h3><p>Blog markdown, SEO 100, sitemap otomatis.</p><div class="stack"><span>Next.js</span><span>MDX</span></div><div class="plinks"><a href="https://github.com/fauziahazhel">Live →</a><a href="https://github.com/fauziahazhel">Code →</a></div></div></div>
   </div>
 </div></section>
 
 <section id="journey"><div class="wrap">
-  <span class="eyebrow">Journey</span>
-  <h2 class="sec-title">Pengalaman & fokus</h2>
-  <p class="sec-sub">Timeline singkat biar klien percaya.</p>
+  <span class="eyebrow">✦ Journey</span>
+  <h2 class="sec-title">Perjalanan singkat</h2>
+  <p class="sec-sub">Kenapa berani bilang profesional.</p>
   <div class="timeline reveal">
-    <div class="t-item"><span>2026 — NOW</span><br><b>Freelance Web Developer</b><p>Bangun landing, company profile, dan toko online untuk klien. Fokus speed + SEO.</p></div>
-    <div class="t-item"><span>2025 — 2026</span><br><b>Frontend Developer Journey</b><p>Dalami React, Tailwind, dan backend Node.js. Push project rutin ke GitHub.</p></div>
-    <div class="t-item"><span>2024 — 2025</span><br><b>HTML • CSS • JS Fundamentals</b><p>Dasar web kuat: semantic HTML, flex/grid, DOM, fetch API, responsive design.</p></div>
+    <div class="t-item"><div class="date">2026 — SEKARANG</div><b>Freelance Web Developer</b><p>Landing, company profile, toko online. Semua diuji di HP Android/iPhone + laptop sebelum serah terima.</p></div>
+    <div class="t-item"><div class="date">2025 — 2026</div><b>Frontend + Backend</b><p>React, Tailwind, Node.js. Biasa deploy ke GitHub Pages, Vercel, dan VPS Rocky Linux.</p></div>
+    <div class="t-item"><div class="date">2024 — 2025</div><b>Fundamental Kuat</b><p>HTML semantik, CSS flex/grid, DOM, fetch API, responsive & aksesibilitas.</p></div>
   </div>
 </div></section>
 
 <section id="contact"><div class="wrap">
-  <span class="eyebrow">Contact</span>
-  <h2 class="sec-title">Punya project? <span class="grad">Mari diskusi.</span></h2>
-  <p class="sec-sub">Respon cepat &lt; 24 jam. Ceritakan kebutuhan web-mu.</p>
+  <span class="eyebrow">✦ Contact</span>
+  <h2 class="sec-title">Punya project? <span class="grad">Yuk diskusi.</span></h2>
+  <p class="sec-sub">Balas &lt; 24 jam. Ceritakan maumu, saya kasih estimasi + demo.</p>
   <div class="contact-grid reveal">
     <div class="contact-card">
-      <h3>Let's work together 🤝</h3>
-      <p>Saya bantu dari desain sampai deploy di VPS / GitHub Pages.</p>
-      <div class="c-row"><span class="c-ico">📧</span> fauziahazhel@gmail.com</div>
-      <div class="c-row"><span class="c-ico">📍</span> Indonesia • Remote worldwide</div>
-      <div class="c-row"><span class="c-ico">🐙</span> github.com/fauziahazhel</div>
+      <h3 style="font-size:1.45rem;margin-bottom:8px">Let's work together 🤝</h3>
+      <p style="color:#c3cde6">Dari desain sampai online + domain. Tinggal terima beres.</p>
+      <div class="c-row"><span class="c-ico">📧</span><span>fauziahazhel@gmail.com</span></div>
+      <div class="c-row"><span class="c-ico">📍</span><span>Indonesia • Remote worldwide</span></div>
+      <div class="c-row"><span class="c-ico">🐙</span><span>github.com/fauziahazhel</span></div>
       <div style="margin-top:20px;display:flex;gap:10px;flex-wrap:wrap">
         <a class="btn btn-primary btn-sm" href="mailto:fauziahazhel@gmail.com?subject=Hire%20Fauziah%20for%20Web%20Project">Hire Me</a>
         <a class="btn btn-ghost btn-sm" href="https://github.com/fauziahazhel">GitHub →</a>
       </div>
     </div>
-    <form onsubmit="location.href='mailto:fauziahazhel@gmail.com?subject='+encodeURIComponent('Project: '+this.nm.value)+'&body='+encodeURIComponent(this.msg.value+' — '+this.em.value);return false;">
-      <input name="nm" placeholder="Nama kamu" required>
-      <input name="em" type="email" placeholder="Email kamu" required>
-      <textarea name="msg" placeholder="Ceritakan project web yang kamu mau..." required></textarea>
+    <form id="contactForm">
+      <div><label for="nm">Nama</label><input id="nm" name="nm" placeholder="Nama kamu" required autocomplete="name"></div>
+      <div><label for="em">Email</label><input id="em" name="em" type="email" placeholder="email@kamu.com" required autocomplete="email"></div>
+      <div><label for="msg">Pesan</label><textarea id="msg" name="msg" placeholder="Saya mau bikin website toko online..." required></textarea></div>
       <button class="btn btn-primary" type="submit">Kirim Pesan ✈</button>
     </form>
   </div>
 </div></section>
 
-<footer>© 2026 Fauziah Azhel • Built with ❤ in Indonesia • <a href="https://github.com/fauziahazhel" style="color:var(--brand2)">GitHub</a></footer>
-<button id="toTop" onclick="scrollTo({top:0,behavior:'smooth'})">↑</button>
+<footer>© 2026 Fauziah Azhel • Dibuat dengan ❤ di Indonesia • <a href="https://github.com/fauziahazhel" style="color:var(--cyan)">GitHub</a> • <a href="https://fauziahazhel.github.io" style="color:var(--cyan)">Portfolio</a></footer>
+<button id="toTop" aria-label="Ke atas">↑</button>
 
 <script>
-const roles=["modern websites","landing pages","online stores","dashboards","company profiles"];let ri=0,ci=0,del=false;const el=document.getElementById('typed');
-(function type(){const w=roles[ri];el.textContent=w.slice(0,ci);if(!del){ci++;if(ci>w.length+8){del=true}}else{ci--;if(ci===0){del=false;ri=(ri+1)%roles.length}}setTimeout(type,del?40:90)})();
-const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting)e.target.classList.add('show')}),{threshold:.12});
+const burger=document.getElementById('burger'),links=document.getElementById('navLinks');
+burger.addEventListener('click',()=>links.classList.toggle('open'));
+links.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>links.classList.remove('open')));
+const roles=["website modern","landing page","toko online","dashboard admin","company profile"];let ri=0,ci=0,del=false;const typed=document.getElementById('typed');
+(function type(){const w=roles[ri];typed.textContent=w.slice(0,ci);if(!del){ci++;if(ci>w.length+10){del=true}}else{ci--;if(ci===0){del=false;ri=(ri+1)%roles.length}}setTimeout(type,del?38:85)})();
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('show');e.target.querySelectorAll('.bar i').forEach(b=>{b.style.width=b.dataset.w||'80%'});io.unobserve(e.target)}}),{threshold:.12});
 document.querySelectorAll('.reveal').forEach(x=>io.observe(x));
-const counters=document.querySelectorAll('.count');const cio=new IntersectionObserver(es=>es.forEach(e=>{if(!e.isIntersecting)return;const t=e.target,n=+t.dataset.n;let c=0;const iv=setInterval(()=>{c+=Math.max(1,Math.round(n/40));if(c>=n){c=n;clearInterval(iv)}t.textContent=c},40);cio.unobserve(t)}));counters.forEach(c=>cio.observe(c));
-addEventListener('scroll',()=>{document.getElementById('toTop').style.display=scrollY>600?'block':'none'});
+document.querySelectorAll('.bar i').forEach(b=>{if(b.closest('.reveal')==null)b.style.width=b.dataset.w});
+const counters=document.querySelectorAll('.count');const cio=new IntersectionObserver(es=>es.forEach(e=>{if(!e.isIntersecting)return;const t=e.target,n=+t.dataset.n;let c=0;const step=Math.max(1,Math.round(n/45));const iv=setInterval(()=>{c+=step;if(c>=n){c=n;clearInterval(iv)}t.textContent=c},35);cio.unobserve(t)}),{threshold:.5});counters.forEach(c=>cio.observe(c));
+const toTop=document.getElementById('toTop');addEventListener('scroll',()=>{toTop.style.display=scrollY>600?'block':'none'},{passive:true});toTop.addEventListener('click',()=>scrollTo({top:0,behavior:'smooth'}));
+const secs=[...document.querySelectorAll('section[id]')],navA=[...document.querySelectorAll('.links a')];
+addEventListener('scroll',()=>{let cur='';secs.forEach(s=>{if(scrollY>=s.offsetTop-140)cur=s.id});navA.forEach(a=>a.classList.toggle('active',a.getAttribute('href')==='#'+cur))},{passive:true});
+document.getElementById('contactForm').addEventListener('submit',function(e){e.preventDefault();const nm=this.nm.value.trim(),em=this.em.value.trim(),msg=this.msg.value.trim();location.href='mailto:fauziahazhel@gmail.com?subject='+encodeURIComponent('Project dari '+nm)+'&body='+encodeURIComponent(msg+'\n\n— '+nm+' ('+em+')')});
+const tilt=document.getElementById('tilt');
+if(matchMedia('(pointer:fine)').matches){document.querySelector('.profile-zone').addEventListener('mousemove',e=>{const r=tilt.getBoundingClientRect(),x=(e.clientX-r.left)/r.width-.5,y=(e.clientY-r.top)/r.height-.5;tilt.style.transform=`rotateY(${x*10}deg) rotateX(${-y*10}deg)`});document.querySelector('.profile-zone').addEventListener('mouseleave',()=>tilt.style.transform='')}
 </script>
 </body>
 </html>
