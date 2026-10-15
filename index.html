@@ -22,63 +22,7 @@ tailwind.config = { theme: { extend: {
 }}}
 </script>
 <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-<style>
-  * { -webkit-tap-highlight-color: transparent; }
-  body { background: #0B0F1A; }
-  ::selection { background: #EAB308; color: #0B0F1A; }
-
-  /* ===== LOADING SCREEN ===== */
-  #loader { position: fixed; inset: 0; z-index: 100; background: #0B0F1A;
-    display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 24px;
-    transition: opacity .6s ease, visibility .6s; }
-  #loader.done { opacity: 0; visibility: hidden; }
-  .loader-bar { width: 200px; height: 3px; background: #1E2A3F; border-radius: 99px; overflow: hidden; }
-  .loader-bar > div { height: 100%; width: 0%; border-radius: 99px;
-    background: linear-gradient(90deg,#EAB308,#FDE047); animation: load 1.4s ease forwards; }
-  @keyframes load { to { width: 100%; } }
-  .loader-logo { font-size: 28px; font-weight: 800; color: #F8F6F0; letter-spacing: -1px;
-    animation: pulse-logo 1.4s ease infinite; }
-  .loader-logo span { color: #EAB308; }
-  @keyframes pulse-logo { 0%,100% { opacity: 1; } 50% { opacity: .5; } }
-
-  /* ===== SKELETON ===== */
-  .skeleton { position: relative; overflow: hidden; background: #151D2E; border-radius: 12px; }
-  .skeleton::after { content: ''; position: absolute; inset: 0;
-    background: linear-gradient(90deg, transparent, rgba(234,179,8,.08), transparent);
-    animation: shimmer 1.6s infinite; }
-  @keyframes shimmer { 0% { transform: translateX(-100%); } 100% { transform: translateX(100%); } }
-
-  /* ===== REVEAL ===== */
-  .reveal { opacity: 0; transform: translateY(28px); transition: opacity .7s ease, transform .7s cubic-bezier(.16,1,.3,1); }
-  .reveal.in { opacity: 1; transform: none; }
-  @media (prefers-reduced-motion: reduce) { .reveal { transition: none; opacity: 1; transform: none; } }
-
-  /* ===== CARDS ===== */
-  .card { background: #151D2E; border: 1px solid #1E2A3F; border-radius: 20px;
-    transition: transform .3s cubic-bezier(.16,1,.3,1), border-color .3s, box-shadow .3s; }
-  .card:hover { transform: translateY(-6px); border-color: rgba(234,179,8,.4);
-    box-shadow: 0 20px 50px -12px rgba(234,179,8,.15); }
-
-  .btn-gold { background: linear-gradient(135deg,#EAB308,#FDE047); color: #0B0F1A;
-    transition: transform .2s, box-shadow .2s; box-shadow: 0 8px 24px -6px rgba(234,179,8,.4); }
-  .btn-gold:hover { transform: translateY(-2px); box-shadow: 0 12px 32px -6px rgba(234,179,8,.55); }
-  .btn-gold:active { transform: scale(.97); }
-  .btn-ghost { border: 1px solid #1E2A3F; transition: all .2s; }
-  .btn-ghost:hover { border-color: #EAB308; color: #FDE047; }
-
-  .gold-text { background: linear-gradient(135deg,#EAB308,#FDE047);
-    -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; }
-
-  .nav-blur { backdrop-filter: blur(16px); background: rgba(11,15,26,.8); }
-  .section-label { display: inline-flex; align-items: center; gap: 8px;
-    font-size: 12px; font-weight: 700; letter-spacing: .15em; text-transform: uppercase; color: #EAB308; }
-  .section-label::before { content: ''; width: 24px; height: 2px; background: #EAB308; border-radius: 2px; }
-
-  input, textarea { background: #0B0F1A !important; border: 1px solid #1E2A3F !important;
-    border-radius: 12px !important; color: #F8F6F0 !important; transition: border-color .2s !important; }
-  input:focus, textarea:focus { border-color: #EAB308 !important; outline: none !important;
-    box-shadow: 0 0 0 3px rgba(234,179,8,.12) !important; }
-</style>
+<link rel="stylesheet" href="css/style.css">
 </head>
 <body class="text-cream antialiased">
 
@@ -225,61 +169,6 @@ tailwind.config = { theme: { extend: {
   <p>© 2026 Fauziah Azhel · Web Developer Indonesia</p>
 </footer>
 
-<script>
-// ===== LOADER =====
-window.addEventListener('load', () => {
-  setTimeout(() => document.getElementById('loader').classList.add('done'), 1400);
-});
-setTimeout(() => document.getElementById('loader').classList.add('done'), 3500);
-
-// ===== MOBILE MENU =====
-const menuBtn = document.getElementById('menuBtn');
-const mobileMenu = document.getElementById('mobileMenu');
-menuBtn.addEventListener('click', () => mobileMenu.classList.toggle('hidden'));
-mobileMenu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => mobileMenu.classList.add('hidden')));
-
-// ===== REVEAL ON SCROLL =====
-const io = new IntersectionObserver(es => es.forEach(e => {
-  if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); }
-}), { threshold: .12 });
-document.querySelectorAll('.reveal').forEach(el => io.observe(el));
-
-// ===== DATA (dengan skeleton loading) =====
-const skills = [
-  { icon: '🌐', name: 'HTML5', desc: 'Markup semantik & aksesibel' },
-  { icon: '🎨', name: 'CSS3', desc: 'Layout modern & animasi' },
-  { icon: '⚡', name: 'JavaScript', desc: 'JavaScript ES6+' },
-  { icon: '💠', name: 'TypeScript', desc: 'Pengembangan type-safe' },
-  { icon: '⚛️', name: 'React', desc: 'Antarmuka berbasis komponen' },
-  { icon: '💨', name: 'Tailwind', desc: 'Styling utility-first' },
-  { icon: '🟢', name: 'Node.js', desc: 'REST API & server-side' },
-  { icon: '🚀', name: 'Deploy', desc: 'CI/CD & cloud deployment' },
-];
-const projects = [
-  { emoji: '⚡', name: 'ZerMail', desc: 'Aplikasi email sementara dengan ekstraksi OTP otomatis, multi-inbox, dan mode gelap.', url: 'https://mail.adeerazer.web.id', tags: ['TypeScript','Tailwind','Upstash'] },
-  { emoji: '☕', name: 'BeeCoffee', desc: 'Website kedai kopi dengan desain modern yang sepenuhnya responsif.', url: 'https://beecoffee.web.id', tags: ['HTML','CSS','JavaScript'] },
-];
-
-setTimeout(() => {
-  document.getElementById('skillGrid').innerHTML = skills.map((s,i) =>
-    `<div class="reveal card p-6 text-center" style="transition-delay:${i*60}ms">
-      <p class="text-4xl mb-3">${s.icon}</p>
-      <p class="font-bold">${s.name}</p>
-      <p class="text-xs text-muted mt-1">${s.desc}</p>
-    </div>`).join('');
-
-  document.getElementById('projectGrid').innerHTML = projects.map((p,i) =>
-    `<a href="${p.url}" target="_blank" class="reveal card p-8 block group" style="transition-delay:${i*100}ms">
-      <p class="text-5xl mb-5">${p.emoji}</p>
-      <h3 class="font-extrabold text-2xl mb-3 group-hover:text-goldlight transition">${p.name}</h3>
-      <p class="text-muted text-sm leading-relaxed mb-5">${p.desc}</p>
-      <div class="flex flex-wrap gap-2 mb-5">${p.tags.map(t =>
-        `<span class="text-[11px] font-bold bg-ink border border-line px-3 py-1 rounded-full text-muted">${t}</span>`).join('')}</div>
-      <span class="text-gold font-bold text-sm">Kunjungi →</span>
-    </a>`).join('');
-
-  document.querySelectorAll('#skillGrid .reveal, #projectGrid .reveal').forEach(el => io.observe(el));
-}, 900);
-</script>
+<script src="js/main.js"></script>
 </body>
 </html>
